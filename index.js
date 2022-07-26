@@ -101,33 +101,8 @@ for (let i = 0; i < btns.length; i++) {
               return result
               break
               screen.textContent = result
-            // i++
-            // console.log(result, firstNum, newNum)
           }
         }
-
-      // return result
     }
   })
 }
-
-// function multiply(num1, num2) {
-//   return num1 * num2
-// }
-
-// function add(num1, num2) {
-//   return num1 + num2
-// }
-
-// function subtract(num1, num2) {
-//   return num1 - num2
-// }
-
-// function divide(num1, num2) {
-//   return num1 / num2
-// }
-
-// function calcNum(num1, calc, num2) {
-//   return calc
-
-// console.log(calcNum(firstNum, operator, secondNum))
