@@ -103,14 +103,14 @@ for (let i = 0; i < btns.length; i++) {
               result = firstNum / newNum
               screen.textContent = result
               break
-            case '%':
-              result = (firstNum / 100) * newNum
-              screen.textContent = result
-              console.log('clicked percentage')
-              break
           }
           break
         }
+      case '%':
+        result = percentage
+        screen.textContent = result
+        console.log('clicked percentage')
+        break
     }
   })
 }
