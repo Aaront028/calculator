@@ -6,14 +6,11 @@
   text-decoration: none;
 }
 
-
-
 .main {
   border: 1px solid red;
   margin: 15% auto 0 auto;
   padding: 30px;
   border-radius: 10px;
-
 }
 
 .col {

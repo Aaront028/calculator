@@ -1,13 +1,19 @@
+// let firstNum = Number(prompt('What is your first number?:'))
+// let secondNum = Number(prompt('What is your second number?:'))
+// let operator = prompt('enter your operator')
+
 // other key default error
+// input numbers into screen area.
+// split numbers from operators and put them into num1 and num2 variables
+// delete button using pop
 
 const btns = document.getElementsByClassName('btn')
 let screen = document.querySelector('#Screen')
 let tempNum = ''
+// let total = 0
 let entries = []
 
 let result
-let symbol
-let newNum
 let decimalClicked = false
 
 for (let i = 0; i < btns.length; i++) {
@@ -50,9 +56,9 @@ for (let i = 0; i < btns.length; i++) {
         decimalClicked = false
         tempNum = ''
         break
-      case '/':
+      case '÷':
         entries.push(tempNum)
-        entries.push('/')
+        entries.push('÷')
         decimalClicked = false
         tempNum = ''
         break
@@ -78,6 +84,9 @@ for (let i = 0; i < btns.length; i++) {
         decimalClicked = false
         break
       case '=':
+        let symbol
+        let newNum
+
         entries.push(tempNum)
         for (let i = 1; i < entries.length; i++) {
           newNum = Number(entries[i + 1])
@@ -94,6 +103,7 @@ for (let i = 0; i < btns.length; i++) {
             case '+':
               result = firstNum + newNum
               screen.textContent = result
+              console.log('clicked')
               break
             case '-':
               result = firstNum - newNum
@@ -103,14 +113,14 @@ for (let i = 0; i < btns.length; i++) {
               result = firstNum / newNum
               screen.textContent = result
               break
+            case '%':
+              result = firstNum / 100 + newNum
+              screen.textContent = result
+              console.log('clicked percentage')
+              break
           }
           break
         }
-      case '%':
-        result = percentage
-        screen.textContent = result
-        console.log('clicked percentage')
-        break
     }
   })
 }
