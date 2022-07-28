@@ -10,25 +10,13 @@
 }
 
 body {
+ /* display: flex;
+ flex-direction: column;
+ justify-content: center; */
   background-color: rgb(24, 32, 52);
-
+  color: rgb(50, 50, 50);
 }
-/* --------------------------------------------------------- */
 
-/* light */
-
-
-
-/* ------------------------------------------------------ */
-/* dark */
-/* body */
-
-/* color:rgba(255, 235, 235); */
-/* background-color: rgb(24, 32, 52); */
-/* background-color: hsl(222, 26%, 31%); */
-
-/* Main */
-/* background-image: url('images/dark.jpg'); */
 .main {  
   margin: 5% auto 0 auto;
   padding: 15px;
@@ -55,6 +43,19 @@ li {
 .menu {
   display: flex;
   justify-content: space-between ;
+  align-items: center;
+}
+
+.submenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.theme {
+  padding-right:5px;
+  font-size: 10px;
 }
 
 .screen {
@@ -72,11 +73,30 @@ li {
 #Screen {
   font-size: 30px;
   margin-right: 7px;
-  /* color: white; */
+
 }
 
-.btn {
 
+
+.switchDiv {
+  display: flex;
+  justify-content: center;
+  /* align-self: flex-end, center; */
+  border-radius: 50px;
+  border: 5px solid rgb(50, 50, 50, 0.8);
+  /* background-color: rgb(50, 50, 50, 0.8);; */
+  min-width: 70px;
+  align-items: center;
+
+}
+
+.ball {
+
+  z-index: 2;
+  border: 5px solid brown; 
+  border-radius: 40px;
+}
+.btn {
   border-style: hidden;
   border: 10px solid rgba(255, 235, 235 .9);
   background-color: rgba(255, 235, 235, 0.7);
@@ -111,6 +131,15 @@ li {
   content: '';
   display: block;
   background-color: black;
+}
+
+.footer {
+  padding:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #909090;
 }
 
 .col-1 {width: 8.33%;}

@@ -11,6 +11,8 @@ const btns = document.getElementsByClassName('btn')
 const screen = document.querySelector('#Screen')
 const theme = document.getElementsByTagName('ul')[0].children
 const main = document.querySelector('.main')
+const body = document.querySelector('body')
+const ball = document.querySelector('.switchDiv')
 
 let tempNum = ''
 let entries = []
@@ -24,7 +26,21 @@ for (let i = 0; i < theme.length; i++) {
 
     if (themeBtn === '1') {
       console.log('click' + themeBtn)
-      main.style.setPropertybackgroundImage = 'url("images/light.jpg")'
+      main.style.backgroundImage = "url('images/pattern.jpg')"
+      body.style.color = 'rgb(50, 50, 50)'
+      ball.style.justifyContent = 'flex-start'
+    }
+    if (themeBtn === '2') {
+      console.log('click' + themeBtn)
+      main.style.backgroundImage = "url('images/dark.jpg')"
+      body.style.color = 'rgb(255, 235, 235)'
+      ball.style.justifyContent = 'center'
+    }
+    if (themeBtn === '3') {
+      console.log('click' + themeBtn)
+      main.style.backgroundImage = "url('images/light.jpg')"
+      body.style.color = 'rgb(50, 50, 50)'
+      ball.style.justifyContent = 'flex-end'
     }
   })
 }
