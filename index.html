@@ -5,31 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Calculator app</title>
   <link rel="stylesheet" href="main.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+ 
 </head>
 <body>
 <div class="main">
-  <div class="switch">
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
-  </div>
-  <div class="menu">
-    <h3>calc</h3>
-    <p>THEME</p>
-    <button></button>
-  </div>
-  <div class="screen">
-   <h3 id="Screen">0</h3>
+  <div class="head">
+    <div class="switch">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+    <div class="menu">
+      <h3>calc</h3>
+      <p>THEME</p>
+      <button></button>
+    </div>
+    <div class="screen">
+     <h3 id="Screen">0</h3>
+    </div>
   </div>
   <div class="body">
     <div class="row">
@@ -58,17 +59,14 @@
     </div> 
     <div class="row"> 
       <button class="btn col col-3">%</button>
-      <button class="btn col col-3">RESET</button>
+      <button class="btn reset col col-3">RESET</button>
       <button class="btn col col-6">=</button>
     </div>
   </div>
 </div>
 
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Aaron Tan</a>.
-  </div>
+
   <script src="index.js"></script>
 </body>
 </html>

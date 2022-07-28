@@ -8,25 +8,39 @@
 // delete button using pop
 
 const btns = document.getElementsByClassName('btn')
-let screen = document.querySelector('#Screen')
-let tempNum = ''
-// let total = 0
-let entries = []
+const screen = document.querySelector('#Screen')
+const theme = document.getElementsByTagName('ul')[0].children
+const main = document.querySelector('.main')
 
+let tempNum = ''
+let entries = []
+// main.style.backgroundImage = 'url("images/light.jpg")'
 let result
 let decimalClicked = false
+
+for (let i = 0; i < theme.length; i++) {
+  theme[i].addEventListener('click', function (e) {
+    let themeBtn = e.target.textContent
+
+    if (themeBtn === '1') {
+      console.log('click' + themeBtn)
+      main.style.setPropertybackgroundImage = 'url("images/light.jpg")'
+    }
+  })
+}
 
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener('click', function (e) {
     let cell = e.target.textContent
     let firstNum = Number(entries[0])
     let percentage = firstNum / 100
-    if (!isNaN(cell)) {
-      tempNum += cell
+    if (tempNum.length <= 13)
+      if (!isNaN(cell)) {
+        tempNum += cell
 
-      screen.textContent = tempNum
-      console.log(tempNum, entries)
-    }
+        screen.textContent = tempNum
+        console.log(tempNum, entries)
+      }
 
     if (cell === '.') {
       if (decimalClicked != true) {
@@ -114,10 +128,12 @@ for (let i = 0; i < btns.length; i++) {
               screen.textContent = result
               break
             case '%':
-              result = firstNum / 100 + newNum
+              result = (firstNum / newNum) * 100
               screen.textContent = result
               console.log('clicked percentage')
               break
+
+              i++
           }
           break
         }
