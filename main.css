@@ -80,7 +80,7 @@ li {
 
 .switchDiv {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   /* align-self: flex-end, center; */
   border-radius: 50px;
   border: 5px solid rgb(50, 50, 50, 0.8);
