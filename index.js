@@ -13,10 +13,13 @@ const theme = document.getElementsByTagName('ul')[0].children
 const main = document.querySelector('.main')
 const body = document.querySelector('body')
 const ball = document.querySelector('.switchDiv')
+const footer = document.querySelector('.footer')
+const year = new Date().getFullYear()
+
+footer.textContent = `Aaron Tan © Copyright ${year} `
 
 let tempNum = ''
 let entries = []
-// main.style.backgroundImage = 'url("images/light.jpg")'
 let result
 let decimalClicked = false
 
@@ -55,7 +58,7 @@ for (let i = 0; i < btns.length; i++) {
         tempNum += cell
 
         screen.textContent = tempNum
-        console.log(tempNum, entries)
+        console.log(tempNum, entries) // main.style.backgroundImage = 'url("images/light.jpg")'
       }
 
     if (cell === '.') {
