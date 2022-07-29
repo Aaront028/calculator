@@ -127,34 +127,45 @@ for (let i = 0; i < btns.length; i++) {
           if (entries[i + 2] === '%') {
             firstNum = percentage
           }
+          3
           console.log(symbol)
           switch (symbol) {
             case 'x':
               result = firstNum * newNum
-              screen.textContent = result
+              checkResults(result)
+              console.log(result)
               break
             case '+':
               result = firstNum + newNum
-              screen.textContent = result
-              console.log('clicked')
+              checkResults(result)
+              console.log('clicked result:' + result.toString().length)
               break
             case '-':
               result = firstNum - newNum
-              screen.textContent = result
+              checkResults(result)
               break
             case '÷':
               result = firstNum / newNum
-              screen.textContent = result
+              checkResults(result)
               break
             case '%':
               result = (firstNum / newNum) * 100
-              screen.textContent = result
+              checkResults(result)
               console.log('clicked percentage')
               break
 
               i++
           }
           break
+        }
+
+        function checkResults(result) {
+          console.log('inside function' + result)
+          if (result.toString().length <= 13) {
+            screen.textContent = result
+          } else {
+            screen.textContent = 'out of range'
+          }
         }
     }
   })

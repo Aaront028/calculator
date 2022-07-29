@@ -37,7 +37,13 @@ ul {
 }
 
 li {
-  padding: 0 10px 0 10px
+  cursor: pointer;
+  padding: 0 10px 0 10px;
+}
+
+li:hover {
+  cursor:pointer;
+
 }
 
 .menu {
