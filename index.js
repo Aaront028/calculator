@@ -52,13 +52,13 @@ for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener('click', function (e) {
     let cell = e.target.textContent
     let firstNum = Number(entries[0])
-    let percentage = firstNum / 100
+    console.log(entries, 'before forloop' + firstNum)
     if (tempNum.length <= 13)
       if (!isNaN(cell)) {
         tempNum += cell
 
         screen.textContent = tempNum
-        console.log(tempNum, entries) // main.style.backgroundImage = 'url("images/light.jpg")'
+        // main.style.backgroundImage = 'url("images/light.jpg")'
       }
 
     if (cell === '.') {
@@ -66,7 +66,7 @@ for (let i = 0; i < btns.length; i++) {
         tempNum += cell
         screen.textContent = tempNum
         decimalClicked = true
-        console.log(tempNum)
+        // console.log(tempNum)
       }
     }
 
@@ -102,7 +102,7 @@ for (let i = 0; i < btns.length; i++) {
         tempNum = ''
         break
       case 'del':
-        screen.textContent = tempNum = tempNum.slice(0, -1)
+        tempNum = tempNum.slice(0, -1)
         if (tempNum === '') {
           tempNum = '0'
           screen.textContent = tempNum
@@ -121,52 +121,55 @@ for (let i = 0; i < btns.length; i++) {
         let newNum
 
         entries.push(tempNum)
+        entries.push('=')
         for (let i = 1; i < entries.length; i++) {
           newNum = Number(entries[i + 1])
           symbol = entries[i]
-          if (entries[i + 2] === '%') {
-            firstNum = percentage
-          }
-          3
-          console.log(symbol)
+
           switch (symbol) {
             case 'x':
               result = firstNum * newNum
               checkResults(result)
-              console.log(result)
+              entries.push('x')
+
               break
             case '+':
               result = firstNum + newNum
               checkResults(result)
-              console.log('clicked result:' + result.toString().length)
+              entries.push('+')
+
               break
             case '-':
               result = firstNum - newNum
               checkResults(result)
+              entries.push('-')
               break
             case '÷':
               result = firstNum / newNum
               checkResults(result)
+              entries.push('÷')
               break
             case '%':
               result = (firstNum / newNum) * 100
               checkResults(result)
-              console.log('clicked percentage')
               break
-
-              i++
           }
+
           break
         }
 
         function checkResults(result) {
-          console.log('inside function' + result)
           if (result.toString().length <= 13) {
             screen.textContent = result
+            entries = ['']
+            entries[0] = result.toString()
+            console.log(firstNum + 'after check result')
+            // console.log(entries, firstNum)
           } else {
             screen.textContent = 'out of range'
           }
         }
     }
+    console.log(entries, 'after check results' + firstNum)
   })
 }
